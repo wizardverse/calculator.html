@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basiccalculations.in</title>
+
+    <!--  Css Start  Here -->
+    <style>
+        body {
+            width: auto;
+            height: auto;
+        }
+
+        .container {
+            margin-top: 150px;
+            margin-left: 500px;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            align-items: center;
+        }
+
+        input {
+            width: 100px;
+            height: 60px;
+            border: 2px solid white;
+            border-radius: 40px;
+            font-size: 25px;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        input:hover {
+            background-color: lightgrey;
+            box-shadow: 2px 3px 4px 5px;
+        }
+
+        button {
+            background-color: white;
+            font-size: 25px;
+            border: 2px solid none;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            background-color: grey;
+            box-shadow: 2px 3px 4px 5px;
+        }
+
+        #ope {
+            font-size: 25px;
+            background-color: lightgrey;
+            box-shadow: 2px 3px 4px 5px;
+            padding: 5px;
+            border: 2px solid none;
+            border-radius: 5px;
+        }
+
+        .circle {
+            background-color: lightgrey;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 2px solid none;
+            border-radius: 120px;
+        }
+    </style>
+    <!-- Css Ends Here -->
+</head>
+
+<body style="background-color: black;">
+    <div class=" container">
+        <div class="circle">
+            <br>
+            <h1>Simple Calculations</h2>
+                <br>
+                <br>
+                <input type="number" name="first" id="first" step="any" />
+
+                <select name="" id="ope">
+                    <option></option>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="*">X</option>
+                </select>
+                <input type="number" name="second" id="second" step="any" />
+                <br><br>
+                <button onclick="cal()">Calculator</button><br><br>
+                <input type="text" name="" id="res" readonly value="Null"><br><br>
+                <button onclick="clearInput()">Clear</button><br><br>
+                <br><br>
+        </div>
+    </div>
+</body>
+
+<!-- Java Script Start Here -->
+<script type="text/javascript">
+    function cal() {
+        var opr1 = document.getElementById('first').value;
+        var opr2 = document.getElementById('second').value;
+        var ope = document.getElementById('ope').value;
+        if (ope == '+') {
+            var res = parseInt(opr1) + parseInt(opr2);
+        }
+        if (ope == '-') {
+            var res = parseInt(opr1) - parseInt(opr2);
+        }
+        if (ope == '/') {
+            var res = parseInt(opr1) / parseInt(opr2);
+        }
+        if (ope == '*') {
+            var res = parseInt(opr1) * parseInt(opr2);
+        }
+        document.getElementById('res').value = res;
+    }
+
+    function clearInput() {
+        var opr1 = document.getElementById('first').value;
+        var opr2 = document.getElementById('second').value;
+        var ope = document.getElementById('ope').value;
+        document.getElementById("first").value = "";
+        document.getElementById("second").value = "";
+        document.getElementById("ope").value = "";
+        document.getElementById("res").value = "";
+    }
+</script>
+<!-- Java Script Ends Here -->
+
+</html>
